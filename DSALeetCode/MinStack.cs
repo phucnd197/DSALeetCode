@@ -1,5 +1,3 @@
-using System.Net.NetworkInformation;
-
 namespace DSALeetCode;
 
 public interface IMinStack
@@ -20,11 +18,11 @@ public interface IMinStack
  */
 public class MinStack : IMinStack
 {
+    private int _capacity;
     private int?[] _items = Array.Empty<int?>();
     private int _min = int.MaxValue;
     private int _minIndex = -1;
     private int _size;
-    private int _capacity;
 
     public MinStack()
     {

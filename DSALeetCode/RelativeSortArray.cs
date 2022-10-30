@@ -12,7 +12,7 @@ public class RelativeSortArray
             orderArray[index] = (arr2[index], 0);
         }
 
-        int leftPointer = 0;
+        var leftPointer = 0;
         var leftOver = new PriorityQueue<int, int>();
         while (leftPointer < arr1.Length)
         {
@@ -42,7 +42,8 @@ public class RelativeSortArray
                     mainIndex++;
                 }
             }
-            while(leftOver.Count > 0)
+
+            while (leftOver.Count > 0)
             {
                 result[mainIndex] = leftOver.Dequeue();
                 mainIndex++;

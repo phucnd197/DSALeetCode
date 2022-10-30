@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using System.Text.Json;
 using DSALeetCode;
 
 // LengthOfLongestSubstring("au");
@@ -35,5 +36,5 @@ SimpleResultLog(
 void SimpleResultLog(object expect, object actual)
 {
     Console.WriteLine(
-        $"expected {System.Text.Json.JsonSerializer.Serialize(expect)} - actual {System.Text.Json.JsonSerializer.Serialize(actual)}");
+        $"expected {JsonSerializer.Serialize(expect)} - actual {JsonSerializer.Serialize(actual)}");
 }

@@ -23,14 +23,15 @@ public sealed class IsAnagram
         }
 
 
-        	for (var index = 0; index < t.Length; index++)
+        for (var index = 0; index < t.Length; index++)
         {
             if (sDic.TryGetValue(t[index], out var count))
             {
-                if(count - 1 < 0)
+                if (count - 1 < 0)
                 {
                     return false;
                 }
+
                 sDic[t[index]] = count - 1;
             }
             else
