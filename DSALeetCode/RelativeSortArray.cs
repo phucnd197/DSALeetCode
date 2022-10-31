@@ -2,7 +2,7 @@ namespace DSALeetCode;
 
 public class RelativeSortArray
 {
-    public static int[] Function(int[] arr1, int[] arr2)
+    public static int[] Solution(int[] arr1, int[] arr2)
     {
         var dic = new Dictionary<int, int>();
         var orderArray = new (int, int)[arr2.Length];

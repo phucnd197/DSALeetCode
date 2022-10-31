@@ -2,7 +2,7 @@ namespace DSALeetCode;
 
 public sealed class IsAnagram
 {
-    public static bool Function(string s, string t)
+    public static bool Solution(string s, string t)
     {
         if (s.Length != t.Length)
         {

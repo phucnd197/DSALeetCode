@@ -1,6 +1,6 @@
 public sealed class IsValidClosingBracket
 {
-    public static bool Function(string s)
+    public static bool Solution(string s)
     {
         if (s.Length is 0 or 1)
         {

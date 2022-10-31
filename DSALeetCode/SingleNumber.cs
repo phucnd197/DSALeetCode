@@ -2,7 +2,7 @@ namespace DSALeetCode;
 
 public sealed class SingleNumber
 {
-    public static int Function(int[] nums)
+    public static int Solution(int[] nums)
     {
         if (nums.Length == 1)
         {

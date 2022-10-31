@@ -2,7 +2,7 @@ namespace DSALeetCode;
 
 public sealed class BinarySearch
 {
-    public static int Function(int[] nums, int target)
+    public static int Solution(int[] nums, int target)
     {
         var bottom = 0;
         var top = nums.Length - 1;

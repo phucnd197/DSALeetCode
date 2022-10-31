@@ -2,7 +2,7 @@ namespace DSALeetCode;
 
 public sealed class TwoSumEqualTarget
 {
-    public static int[] Function(int[] nums, int target)
+    public static int[] Solution(int[] nums, int target)
     {
         if (nums.Length is 0 or 1)
         {

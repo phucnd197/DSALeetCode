@@ -2,7 +2,7 @@ namespace DSALeetCode;
 
 public sealed class LengthOfLongestNonRepeateSubstring
 {
-    public static int Function(string s)
+    public static int Solution(string s)
     {
         if (s.Length is 0 or 1)
         {

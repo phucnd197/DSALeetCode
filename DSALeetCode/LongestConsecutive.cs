@@ -1,7 +1,8 @@
 namespace DSALeetCode;
 
-public sealed class LongestConsecutive {
-    public static int Function(int[] nums)
+public sealed class LongestConsecutive
+{
+    public static int Solution(int[] nums)
     {
         // covers special case
         if (nums.Length is 0 or 1)

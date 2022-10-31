@@ -26,12 +26,31 @@ using DSALeetCode;
 //SimpleResultLog(0, minStack.GetMin());
 //minStack.Pop();
 //SimpleResultLog(2,minStack.GetMin());
+// SimpleResultLog(
+//     new[] { 2, 2, 2, 1, 4, 3, 3, 9, 6, 7, 19 },
+//     RelativeSortArray.Function(new[] { 2, 3, 1, 3, 2, 4, 6, 7, 9, 2, 19 }, new[] { 2, 1, 4, 3, 9, 6 })
+// );
+// SimpleResultLog(
+//     "no expectation",
+//     GroupAnagrams.Function(new[] { "eat", "tea", "tan", "ate", "nat", "bat" })
+// );
+// var node = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+// SimpleResultLog(
+//    "5,4,3,2,1",
+//    ReverseLinkedList.Function(node)
+// );
+// var node1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+// var node2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+// SimpleResultLog(
+//    "1, 1, 2, 3, 4, 4",
+//    MergeTwoSortedList.Function(node1, node2)
+// );
 
+// var node1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
+// ReorderList.Function(node1);
 
-SimpleResultLog(
-    new[] { 2, 2, 2, 1, 4, 3, 3, 9, 6, 7, 19 },
-    RelativeSortArray.Function(new[] { 2, 3, 1, 3, 2, 4, 6, 7, 9, 2, 19 }, new[] { 2, 1, 4, 3, 9, 6 })
-);
+var node1 = new ListNode(new[] { -21, 10, 17, 8, 4, 26, 5, 35, 33, -7, -16, 27, -12, 6, 29, -12, 5, 9, 20, 14, 14, 2, 13, -24, 21, 23, -21, 5 });
+ListHasCycle.Solution(node1);
 
 void SimpleResultLog(object expect, object actual)
 {

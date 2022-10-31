@@ -2,7 +2,7 @@ namespace DSALeetCode;
 
 public sealed class FindMedianOfTwoSortedArray
 {
-    public static double Function(int[] nums1, int[] nums2)
+    public static double Solution(int[] nums1, int[] nums2)
     {
         var total = nums2.Length + nums1.Length;
         var isOdd = total % 2 != 0;
