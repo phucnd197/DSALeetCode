@@ -2,59 +2,159 @@ namespace DSALeetCode;
 
 public static class TwoSum2
 {
-    public static int[] TwoSum(int[] numbers, int target)
+    /// <summary>
+    /// Solution idea <br/>
+    /// 1 declare 2 target, target a:[0...target], b: [target...0] <br/>
+    /// 2 loop and search array for 2 target, return index of 2 target <br/>
+    /// 2.1 if either index = -1 => the combination of target is incorrect <br/>
+    ///     -> a++, b-- <br/>
+    /// 2.2 continue to loop until a > b
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <param name="target"></param>
+    /// <returns></returns>
+    public static int[] Solution(int[] numbers, int target)
     {
-        int left = 0,
-            right = numbers.Length - 1;
-        // mid = (left + right) / 2;
-        while (right > left)
+        #region cover edge cases
+
+        if (numbers is null || numbers.Length < 2)
+        {
+            return Array.Empty<int>();
+        }
+
+        if (numbers.Length == 2)
+        {
+            return numbers[0] + numbers[1] != target
+                ? Array.Empty<int>()
+                : new[] { 1, 2 };
+        }
+
+        if (numbers[0] > target || numbers[numbers.Length - 1] < target)
+        {
+            return Array.Empty<int>();
+        }
+
+        #endregion
+
+        // V2
+        // possible improvement: randomization for left and right
+        var random = new Random();
+        int left = 0, right = numbers.Length - 1;
+        while (left < right)
         {
             if (target == numbers[right] + numbers[left])
             {
                 return new[] { left + 1, right + 1 };
             }
-
-            if (target < numbers[right])
+            else if (numbers[right] + numbers[left] > target)
             {
-                right = FindRight(numbers, right, target);
-                if (right == -1)
-                {
-                    return Array.Empty<int>();
-                }
+                right--;
             }
-
-            if (target != numbers[right] + numbers[left])
+            else
             {
-                left = FindLeft(numbers, left, target - numbers[right]);
-                if (left == -1)
-                {
-                }
+                left++;
             }
         }
+
+        // V1
+        // int leftTarget = 0, rightTarget = target;
+        // int left = 0, right = 1;
+        // while (leftTarget <= rightTarget)
+        // {
+        //     left = BinarySearchLeftMost(numbers, 0, leftTarget);
+        //     // left = Array.IndexOf(numbers, leftTarget, 0);
+        //     if (left == -1)
+        //     {
+        //         ++leftTarget;
+        //         --rightTarget;
+        //         continue;
+        //     }
+        //
+        //     right = BinarySearch(numbers, left + 1, rightTarget, numbers.Length - 1);
+        //     // right = Array.IndexOf(numbers, rightTarget, left + 1);
+        //     if (right == -1 || left == right)
+        //     {
+        //         ++leftTarget;
+        //         --rightTarget;
+        //         continue;
+        //     }
+        //
+        //     break;
+        // }
+        //
+        // if (left != -1 && right != -1 && target == numbers[right] + numbers[left])
+        // {
+        //     return new[] { left + 1, right + 1 };
+        // }
 
         return Array.Empty<int>();
     }
 
-    private static int FindRight(int[] numbers, int right, int target)
+    public static int BinarySearchLeftMost(int[] array, int start, int target)
     {
-        for (var index = 0; index < numbers.Length; index++)
+        var index = BinarySearch(array, start, target, array.Length - 1);
+        if (index == -1)
         {
-            if (numbers[right] <= target)
+            return index;
+        }
+
+        var leftMost = index;
+        while (index > -1)
+        {
+            index = BinarySearch(array, 0, target, leftMost - 1);
+            if (index > -1 && index < leftMost)
             {
-                return right;
+                leftMost = index;
+            }
+        }
+
+        return leftMost;
+    }
+
+    private static int BinarySearch(int[] array, int start, int target, int end)
+    {
+        int left = start, right = end;
+        while (left <= right)
+        {
+            var mid = (left + right) / 2;
+            if (array[mid] == target)
+            {
+                return mid;
+            }
+
+            if (array[mid] > target)
+            {
+                right = mid - 1;
             }
             else
             {
-                right = (0 + right) / 2;
+                left = mid + 1;
             }
         }
 
         return -1;
     }
 
-    private static int FindLeft(int[] numbers, int left, int leftOver)
+    private static int BinarySearch<T>(IReadOnlyList<T> array, T target)
     {
-        
+        var comparer = Comparer<T>.Default;
+        int left = 0, right = array.Count - 1;
+        while (left <= right)
+        {
+            var mid = (left + right) / 2;
+            switch (comparer.Compare(array[mid], target))
+            {
+                case 0:
+                    return mid;
+                case 1:
+                    right = mid - 1;
+                    break;
+                default:
+                    left = mid + 1;
+                    break;
+            }
+        }
+
         return -1;
     }
 }

@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using System.Text.Json;
+using System.Xml.Serialization;
 using DSALeetCode;
 
 // LengthOfLongestSubstring("au");
@@ -52,11 +53,18 @@ using DSALeetCode;
 // var node1 = new ListNode(new[] { -21, 10, 17, 8, 4, 26, 5, 35, 33, -7, -16, 27, -12, 6, 29, -12, 5, 9, 20, 14, 14, 2, 13, -24, 21, 23, -21, 5 });
 // ListHasCycle.Solution(node1);
 
-var treeNode = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
-SimpleResultLog(
-    3,
-     MaxDepth.Solution(treeNode)
-);
+// var treeNode = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+// SimpleResultLog(
+//     3,
+//      MaxDepth.Solution(treeNode)
+// );
+// var array = new[] { 2, 7, 7, 7, 11, 15 };
+// var expectation = new[] { 1, 2 };
+// const int target = 9;
+// SimpleResultLog(
+//     expectation,
+//     TwoSum2.BinarySearchLeftMost(array, 0, target)
+// );
 
 void SimpleResultLog(object expect, object actual)
 {

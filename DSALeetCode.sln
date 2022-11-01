@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSALeetCode", "DSALeetCode\DSALeetCode.csproj", "{6E34185A-5CBE-4B85-B999-A1724FD1FE61}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DsaTest", "DsaTest\DsaTest.csproj", "{AC362AA0-5623-40E4-BE43-AA1EF292BB7C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{6E34185A-5CBE-4B85-B999-A1724FD1FE61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E34185A-5CBE-4B85-B999-A1724FD1FE61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E34185A-5CBE-4B85-B999-A1724FD1FE61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC362AA0-5623-40E4-BE43-AA1EF292BB7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC362AA0-5623-40E4-BE43-AA1EF292BB7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC362AA0-5623-40E4-BE43-AA1EF292BB7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC362AA0-5623-40E4-BE43-AA1EF292BB7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
