@@ -46,11 +46,17 @@ using DSALeetCode;
 //    MergeTwoSortedList.Function(node1, node2)
 // );
 
-// var node1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
-// ReorderList.Function(node1);
+// var node1 = new ListNode(new[] { 1, 2, 3, 4 });
+// ReorderList.Solution(node1);
 
-var node1 = new ListNode(new[] { -21, 10, 17, 8, 4, 26, 5, 35, 33, -7, -16, 27, -12, 6, 29, -12, 5, 9, 20, 14, 14, 2, 13, -24, 21, 23, -21, 5 });
-ListHasCycle.Solution(node1);
+// var node1 = new ListNode(new[] { -21, 10, 17, 8, 4, 26, 5, 35, 33, -7, -16, 27, -12, 6, 29, -12, 5, 9, 20, 14, 14, 2, 13, -24, 21, 23, -21, 5 });
+// ListHasCycle.Solution(node1);
+
+var treeNode = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+SimpleResultLog(
+    3,
+     MaxDepth.Solution(treeNode)
+);
 
 void SimpleResultLog(object expect, object actual)
 {

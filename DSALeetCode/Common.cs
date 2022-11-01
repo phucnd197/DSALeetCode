@@ -35,3 +35,59 @@ public class ListNode
         this.next = next;
     }
 }
+
+public class TreeNode
+{
+    public int val;
+    public TreeNode? left;
+    public TreeNode? right;
+
+    public TreeNode(int[]? array)
+    {
+        if (array is null || array.Length == 0)
+        {
+            return;
+        }
+
+        if (array.Length >= 1)
+        {
+            val = array[0];
+        }
+
+        for (var index = 1; index < array.Length; index++)
+        {
+            AddNode(this, array[index], 0);
+        }
+    }
+
+    private static void AddNode(TreeNode root, int value, int index)
+    {
+        if (root.left is null)
+        {
+            root.left = new TreeNode(value);
+            return;
+        }
+
+        if (root.right is null)
+        {
+            root.right = new TreeNode(value);
+            return;
+        }
+
+        if (index % 2 == 0)
+        {
+            AddNode(root.right, value, ++index);
+        }
+        else
+        {
+            AddNode(root.left, value, ++index);
+        }
+    }
+
+    public TreeNode(int val = 0, TreeNode? left = null, TreeNode? right = null)
+    {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+}
